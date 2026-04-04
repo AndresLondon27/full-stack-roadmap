@@ -1,0 +1,29 @@
+📁 product-card/        ← antes "tarjeta"
+📁 contact-form/        ← antes "formulario"
+📁 product-grid/        ← antes "grid-layout"
+📁 responsive-first/        ← antes "responsive"
+
+////////////////////////////////////////////////////////
+
+Primero: Estructura inicial y Git
+Vamos a crear todo desde cero con comandos claros (en inglés los comandos, explicación en español):
+
+bash
+# 1. Crear carpeta principal
+mkdir mi-portafolio
+cd mi-portafolio
+
+# 2. Crear estructura de carpetas
+mkdir -p exercises/tarjeta exercises/navbar exercises/formulario exercises/grid-layout exercises/responsive
+
+# 3. Inicializar Git
+git init
+
+# 4. Crear README.md
+echo "# Mi Portafolio - Aprendiendo HTML + CSS" > README.md
+
+# 5. Crear .gitignore (para Windows)
+echo "# OS generated files" > .gitignore
+echo ".DS_Store" >> .gitignore
+echo "Thumbs.db" >> .gitignore
+echo "desktop.ini" >> .gitignore
