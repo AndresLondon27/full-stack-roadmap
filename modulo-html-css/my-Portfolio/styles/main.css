@@ -1,0 +1,310 @@
+/* Selector universal (*) - afecta a TODOS los elementos HTML */
+* {
+    margin: 0;           /* Elimina margen exterior por defecto */
+    padding: 0;          /* Elimina relleno interior por defecto */
+    box-sizing: border-box;  /* Padding y border NO aumenten el ancho total */
+}
+
+/* ESTILOS BASE DEL BODY */
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6; /* Altura entre líneas:1.6 mejora la legibilidad textos largos */
+    color: #1f2937; /* Color texto */
+    background-color: #f9fafb; /* Color fondo */
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 1200px; /* El contenido no crece más de 1200px */
+    margin: 0 auto; /* Centra horizontalmente (auto distribuye espacio sobrante) */
+    padding: 0 20px; /* 20px de relleno izquierda/derecha (evita que toque bordes) */
+}
+
+/* HEADER (BARRA DE NAVEGACIÓN) */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);  /* Sombra muy sutil abajo */    
+    position: sticky;  /* Se comporta como fixed pero dentro de su contenedor */
+    top: 0;  /* Se pega al borde superior al hacer scroll */
+    z-index: 100;  /* Se mantiene POR ENCIMA de otros elementos */
+}
+
+/* Estilo específico para el container DENTRO del header */
+.header .container {
+    display: flex;  /* Activa Flexbox (layout moderno) */
+    justify-content: space-between;  /* Logo izquierda, nav derecha (separados) */
+    align-items: center;  /* Centra verticalmente los hijos */
+    flex-wrap: wrap;  /* Si no hay espacio, los elementos bajan a nueva línea */
+    padding: 1rem 20px;  /* 1rem = 16px arriba/abajo, 20px lados */
+}
+
+.logo {
+    display: flex;           /* Pone imagen y texto en línea */
+    align-items: center;     /* Centra verticalmente */
+    gap: 0.75rem;            /* Espacio entre imagen y texto (12px) */
+}
+
+.logo-img {
+    width: 80px;             /* Ancho de la imagen */
+    height: 80px;            /* Alto de la imagen */
+    border-radius: 50%;      /* Convierte la imagen en un círculo perfecto */
+    object-fit: cover;       /* La imagen se recorta para llenar el círculo sin deformarse */
+    border: 2px solid #ffffff;  /* Borde blanco alrededor (opcional) */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Sombra suave (opcional) */
+}
+
+.logo-text {
+    font-size: 1.5rem;       /* Tamaño del texto */
+    font-weight: bold;       /* Negrita */
+    color: #2563eb;          /* Azul vibrante */
+}
+
+/* Para móviles (pantallas pequeñas) */
+@media (max-width: 768px) {
+    .logo-img {
+        width: 50px;  /* Más grande que antes (era 32px) */
+        height: 50px;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
+    }
+}
+
+/* MENÚ DE NAVEGACIÓN */
+.nav-list {
+    display: flex;  /* Los <li> se ponen en horizontal */
+    gap: 1.5rem;  /* Espacio ENTRE cada elemento */
+    list-style: none;  /* Elimina los puntos/bullets de la lista */
+}
+
+.nav-link {
+    text-decoration: none;  /* Elimina el subrayado de los enlaces <a> */
+    color: #4b5563;         /* color texto */
+    font-weight: 500;       /* estylo texto */
+    transition: color 0.3s; /* Animación suave al cambiar color (0.3 segundos) */
+}
+
+.nav-link:hover {
+    color: #2563eb;
+}
+
+/* BANNER PRINCIPAL */
+.hero {
+    background: linear-gradient(135deg, #2563eb 0%, #06164d 100%);
+        /* Degradado diagonal (135 grados) */
+        /* 0% = inicio, 100% = fin */
+        /* De azul claro a azul más oscuro */
+    color: white;
+    text-align: center;
+    padding: 4rem 0;  /* arriba/abajo */
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;  /* Espacio debajo del título */
+}
+
+.highlight {
+    color: #facc15;  /* (para resaltar el nombre) */
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;  /* Espacio debajo antes del botón */
+    opacity: 0.9;  /* 90% de opacidad (ligeramente transparente) */
+}
+
+/* BOTONES */
+.btn {
+    display: inline-block; /* Se comporta como bloque pero en línea con texto */
+    background-color: white;
+    color: #2563eb;
+    padding: 0.75rem 1.5rem; /* arriba/abajo, lados */
+    text-decoration: none;  /* Sin subrayado */
+    border-radius: 8px;  /* Bordes redondeados */
+    font-weight: bold;  /* Negrita */
+    transition: transform 0.2s, box-shadow 0.2s;  /* Anima 2 propiedades */
+}
+
+.btn:hover {
+    transform: translateY(-2px);  /* Se eleva 2px hacia arriba */
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.87);  /* Sombra más pronunciada */
+}
+
+/* SECCIONES GENERALES */
+section {
+    padding: 3rem 0;  /* arriba/abajo en cada sección */
+}
+
+.section-title {
+    font-size: 2rem;  /* 32px */
+    text-align: center;  /* Centrado */
+    margin-bottom: 2rem;  /* Espacio debajo del título */
+    color: #1f2937;  /* Gris oscuro */
+}
+
+/* SECCIÓN "SOBRE MÍ / ABOUT" */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;  /* Centrado horizontal */
+    text-align: center;  /* Texto centrado */
+    background: white;  /* Fondo blanco */
+    padding: 2rem;  /* 32px de relleno interno */
+    border-radius: 16px;  /* Bordes muy redondeados */
+    box-shadow: 0 4px 6px rgba(4, 21, 175, 0.459); /* Sombra suave */
+}
+
+/* PROYECTOS - CSS GRID */
+.projects-grid {
+    display: grid; /* Activa CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* repeat = repite el patrón */
+    /* auto-fit = crea tantas columnas como quepan */
+    /* minmax(280px, 1fr) = mínimo 280px, máximo 1 fracción del espacio */
+    gap: 2rem;  /* Espacio ENTRE tarjetas (32px) */
+}
+
+/* Tarjeta de proyecto individual */
+.project-card {
+    background: white;
+    padding: 1.5rem;  /* 24px */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.39);
+    transition: transform 0.2s;  /* Solo anima transformación */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);  /* Se eleva 5px */
+}
+
+/* Etiqueta dentro de cada proyecto (ej: "En progreso") */
+.project-tag {
+    display: inline-block;   /* Ocupa solo su contenido, pero acepta padding */
+    background: #e0e7ff;     /* Azul muy claro */
+    color: #2563eb;          /* Texto azul */
+    font-size: 0.75rem;      /* 12px */
+    padding: 0.25rem 0.75rem; /* 4px arriba/abajo, 12px lados */
+    border-radius: 20px;     /* Bordes completamente redondeados (píldora) */
+    margin-top: 1rem;        /* Separación del contenido superior */
+}
+
+/* FORMULARIO DE CONTACTO */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 1rem;     /* Separación entre campos */
+}
+
+.form-group label {
+    display: block;          /* Ocupa toda la línea */
+    font-weight: 500;
+    margin-bottom: 0.5rem;   /* Separación entre label y input */
+}
+
+/* Estilos para inputs y textarea */
+.form-group input,
+.form-group textarea {
+    width: 100%;  /* Ocupa todo el ancho disponible */
+    padding: 0.75rem;  /* 12px de relleno interno */
+    border: 1px solid #d1d5db;  /* Borde gris claro */
+    border-radius: 8px;
+    font-family: inherit;  /* Hereda la fuente del body */
+}
+
+/* Botón del formulario */
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer; /* Manita al pasar el mouse */
+    width: 100%; /* Ocupa todo el ancho */
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+/* FOOTER (PIE DE PÁGINA) */
+
+
+.footer {
+    background-color: #1f2937;  /* Gris muy oscuro */
+    color: #9ca3af;             /* Gris claro para contraste sutil */
+    text-align: center;
+    padding: 2rem 0;            /* Más padding para dar espacio */
+    margin-top: 2rem;
+}
+
+/* Redes sociales en footer */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;     /* Separación del copyright */
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #9ca3af;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background-color: #2563eb;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Copyright */
+.copyright {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* MEDIA QUERIES (RESPONSIVE) */
+@media (max-width: 768px) {
+    /* En móvil: el header cambia a columna */
+    .header .container {
+        flex-direction: column;  /* Apila logo y nav verticalmente */
+        gap: 0.5rem;             /* Espacio reducido entre ellos */
+    }
+
+    /* Menú de navegación en móvil */
+    .nav-list {
+        flex-wrap: wrap;         /* Si no caben, bajan a nueva línea */
+        justify-content: center; /* Centrados horizontalmente */
+        gap: 1rem;               /* Espacio reducido entre enlaces */
+    }
+
+    /* Título hero más pequeño en móvil */
+    .hero-title {
+        font-size: 1.8rem;       /* 28.8px (más legible en pantalla chica) */
+    }
+
+    /* Títulos de sección más pequeños */
+    .section-title {
+        font-size: 1.5rem;       /* 24px */
+    }
+
+    /* Grid de proyectos: fuerza 1 sola columna en móvil */
+    .projects-grid {
+        grid-template-columns: 1fr;  /* 1fr = una sola columna */
+    }
+}

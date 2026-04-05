@@ -1,0 +1,11 @@
+# Notas personales (no subir a GitHub)
+zNotas.txt
+**/zNotas.txt
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Dependencias (para cuando uses Node.js)
+node_modules/
+modulo-html-css/zNote.txt
